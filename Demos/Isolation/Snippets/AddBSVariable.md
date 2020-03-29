@@ -1,0 +1,3 @@
+``` razor
+    BlazorScopedCss.ScopedStyle scopedStyle;
+```

@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddBSCSSService",
+"body": [
+"",
+"            services.AddBlazorScopedCss(Assembly.GetExecutingAssembly());",
+"            ",
+],
+"description": "AddBSCSSService"
+}

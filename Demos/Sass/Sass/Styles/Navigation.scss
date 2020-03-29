@@ -1,0 +1,33 @@
+﻿@import "bootstrap-4.4.1/scss/bootstrap";
+
+nav {
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-light;
+    @extend .bg-light;
+}
+nav > a {
+    @extend .navbar-brand;
+}
+nav > button {
+    @extend .navbar-toggler;
+}
+
+nav > button > span {
+    @extend .navbar-toggler-icon;
+}
+nav > div {
+    @extend .navbar-collapse;
+}
+
+nav > div > ul {
+    @extend .navbar-nav;
+}
+
+nav > div > ul > li {
+    @extend .navbar-nav;
+}
+
+nav > div > ul > li > a {
+    @extend .nav-link;
+}

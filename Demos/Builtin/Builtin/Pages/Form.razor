@@ -1,0 +1,42 @@
+﻿@page "/Form"
+@using System.ComponentModel.DataAnnotations;
+
+<EditForm Model="Item" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-row">
+        <div class="form-group">
+            <label for="ItemName">Name</label>
+            <InputText @bind-Value="Item.Name" id="ItemName"></InputText>
+            <ValidationMessage For="@(() => Item.Name)" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="ItemAge">Age</label>
+            <InputNumber @bind-Value="Item.Age" id="ItemAge"></InputNumber>
+            <ValidationMessage For="@(() => Item.Age)" />
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    protected Person Item = new Person();
+
+    public class Person
+    {
+
+        [Required(ErrorMessage = "Please provide a name", AllowEmptyStrings = false)]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please provide an age")]
+        public int Age { get; set; }
+
+    }
+
+    protected async Task HandleValidSubmit()
+    {
+
+    }
+}

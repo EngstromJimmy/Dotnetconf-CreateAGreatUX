@@ -1,0 +1,75 @@
+﻿@inherits Microsoft.AspNetCore.Components.Forms.InputText
+@using System.ComponentModel.DataAnnotations;
+@using System;
+@using System.Reflection;
+@using Microsoft.AspNetCore.Components.Forms;
+
+
+    <div class="form-group @FormClass">
+        <label for="">@LabelText</label>
+        <input type="text" class="form-control @CssClass" @attributes="@AdditionalAttributes" @onfocus="@(()=>ShowError=true)" placeholder="@PlaceHolder" @bind="@CurrentValue">
+        @if (!string.IsNullOrWhiteSpace(Description))
+        {
+            <small class="form-text text-muted">@Description</small>
+        }
+        @if(ShowError)
+        {
+            @foreach (var message in EditContext.GetValidationMessages(FieldIdentifier))
+            {
+                <div class="validation-message">@message</div>
+            }
+        }
+        @if (!EditContext.GetValidationMessages(FieldIdentifier).Any() && !string.IsNullOrEmpty(SuccessMessage))
+        {
+            <div class="valid-feedback">@string.Format(SuccessMessage, this.Value)</div>
+        }
+
+    </div>
+@code{
+    [Parameter] public bool ShowError { get; set; } = false;
+    [Parameter] public string LabelText { get; set; } = "";
+    [Parameter] public string PlaceHolder { get; set; } = "";
+    [Parameter] public string Description { get; set; } = "";
+    [Parameter] public string SuccessMessage { get; set; } = "";
+    [Parameter] public string FormClass { get; set; } = "";
+    [Parameter] public EventCallback<string> OnValid { get; set; }
+    [Parameter] public bool ShowValidationErrorOnLoad { get; set; } = true;
+    string? oldValue;
+
+
+    protected override Task OnParametersSetAsync()
+    {
+        try
+        {
+            var displayattribute = this.FieldIdentifier.Model.GetType()
+            .GetProperty(this.FieldIdentifier.FieldName)
+            .GetCustomAttribute<DisplayAttribute>();
+            if (displayattribute != null)
+            {
+                var displayName = displayattribute.Name;
+                if (!string.IsNullOrEmpty(displayName) && string.IsNullOrEmpty(LabelText))
+                {
+                    LabelText = displayName;
+                }
+                var placeholder = displayattribute.Prompt;
+                if (!string.IsNullOrEmpty(placeholder) && string.IsNullOrEmpty(PlaceHolder))
+                {
+                    PlaceHolder = placeholder;
+                }
+                var description = displayattribute.Description;
+                if (!string.IsNullOrEmpty(description) && string.IsNullOrEmpty(Description))
+                {
+                    Description = description;
+                }
+            }
+        }
+        catch { }
+
+        if (ShowValidationErrorOnLoad)
+        {
+            EditContext.Validate();
+        }
+        return base.OnParametersSetAsync();
+
+    }
+}

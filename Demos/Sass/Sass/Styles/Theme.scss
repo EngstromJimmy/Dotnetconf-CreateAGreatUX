@@ -1,0 +1,53 @@
+﻿@import "bootstrap-4.4.1/scss/bootstrap";
+
+@media (prefers-color-scheme: dark) {
+    body, section, table {
+        color: #ddd !important;
+        background-color: #222 !important;
+    }
+
+    a {
+        color: white;
+    }
+
+
+        input, select {
+        background-color: #333 !important;
+        color: white !important;
+    }
+
+    nav {
+        background-color: #343a40 !important;
+
+        .navbar-brand {
+            color: $navbar-dark-active-color;
+
+            @include hover-focus {
+                color: $navbar-dark-active-color;
+            }
+        }
+
+        .navbar-nav {
+            .nav-link {
+                color: $navbar-dark-color;
+
+                @include hover-focus {
+                    color: $navbar-dark-hover-color;
+                }
+
+                &.disabled {
+                    color: $navbar-dark-disabled-color;
+                }
+            }
+
+            .show > .nav-link,
+            .active > .nav-link,
+            .nav-link.show,
+            .nav-link.active {
+                color: $navbar-dark-active-color;
+            }
+        }
+    }
+
+    
+ }

@@ -1,0 +1,35 @@
+﻿@import "bootstrap-4.4.1/scss/bootstrap";
+
+input{
+    @extend .form-control;
+}
+
+.invalid .valid {
+    @extend .form-control;
+}
+
+.invalid.modified {
+    @extend .is-invalid;
+}
+
+.valid.modified {
+    @extend .is-valid;
+    @extend .was-validated;
+    @extend .form-control:valid;
+}
+
+.validation-message {
+    @extend .invalid-feedback;
+}
+
+button {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+//<Add my own button style>
+.primarybutton {
+    @extend .btn;
+    @extend .btn-primary;
+}
+//</Add my own button style>

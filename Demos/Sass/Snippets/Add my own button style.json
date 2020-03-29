@@ -1,0 +1,12 @@
+"Name": {
+"prefix": "Add my own button style",
+"body": [
+"",
+".primarybutton {",
+"    @extend .btn;",
+"    @extend .btn-primary;",
+"}",
+"",
+],
+"description": "Add my own button style"
+}

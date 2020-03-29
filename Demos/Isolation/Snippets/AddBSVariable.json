@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddBSVariable",
+"body": [
+"",
+"    BlazorScopedCss.ScopedStyle scopedStyle;",
+"    ",
+],
+"description": "AddBSVariable"
+}

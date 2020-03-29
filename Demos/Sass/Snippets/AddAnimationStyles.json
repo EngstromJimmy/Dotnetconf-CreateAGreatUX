@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddAnimationStyles",
+"body": [
+"",
+"@import "Animations";",
+"",
+],
+"description": "AddAnimationStyles"
+}

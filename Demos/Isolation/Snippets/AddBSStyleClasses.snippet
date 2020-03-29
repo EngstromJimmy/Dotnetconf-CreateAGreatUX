@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+<Title>AddBSStyleClasses</Title>
+<Author>CodePresenterGenerator</Author>
+<Description></Description><HelpUrl></HelpUrl>
+<Shortcut>AddBSStyleClasses</Shortcut>
+</Header>
+<Snippet>
+<Code Language ="csharp" Delimiter = "$"><![CDATA[
+@if (scopedStyle?.IsComplete ?? false)
+{
+    <h1 class="@scopedStyle.CssScopedClasses(scopedCssClasses: "myFirstScopedComponent")">Weather forecast</h1>
+
+    <p class="@scopedStyle.CssClassesMixed(nonScopedCssClasses: "display-1", scopedCssClasses: "mySecondScopedComponent")">This component demonstrates fetching data from a service.</p>
+}
+]]></Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>

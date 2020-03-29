@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddBSCSSStyle",
+"body": [
+"",
+"    <style id="scopedCss"></style>",
+"    ",
+],
+"description": "AddBSCSSStyle"
+}

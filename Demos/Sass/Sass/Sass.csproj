@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="Styles\bootstrap-4.4.1\.github\CODEOWNERS" />
+    <None Include="Styles\bootstrap-4.4.1\.github\CONTRIBUTING.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\ISSUE_TEMPLATE\bug.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\ISSUE_TEMPLATE\feature.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\SUPPORT.md" />
+    <None Include="Styles\bootstrap-4.4.1\.github\workflows\test.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+</Project>

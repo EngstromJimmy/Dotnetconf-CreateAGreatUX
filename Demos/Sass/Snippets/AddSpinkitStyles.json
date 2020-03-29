@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddSpinkitStyles",
+"body": [
+"",
+"@import "Spinkit";",
+"",
+],
+"description": "AddSpinkitStyles"
+}

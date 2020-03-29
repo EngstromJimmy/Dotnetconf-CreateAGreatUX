@@ -1,0 +1,9 @@
+"Name": {
+"prefix": "AddBSCSSScript",
+"body": [
+"",
+"    <script src="/_content/BlazorScopedCss/jsInterop.js"></script>",
+"    ",
+],
+"description": "AddBSCSSScript"
+}

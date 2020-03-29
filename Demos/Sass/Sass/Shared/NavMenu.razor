@@ -1,0 +1,35 @@
+﻿    <nav>
+        <a href="#">Azm Blazor</a>
+        <button @onclick="ToggleNavMenu">
+            <span></span>
+        </button>
+        <div class="@NavMenuCssClass">
+            <ul>
+                <li>
+                    <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink href="counter">Counter</NavLink>
+                </li>
+                <li>
+                    <NavLink href="fetchdata">Fetch data</NavLink>
+                </li>
+
+                <li>
+                    <NavLink href="form">Form</NavLink>
+                </li>
+            </ul>
+        </div>
+    </nav>
+   
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

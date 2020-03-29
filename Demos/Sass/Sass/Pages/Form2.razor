@@ -1,0 +1,72 @@
+﻿@page "/Form2"
+@using System.ComponentModel.DataAnnotations;
+@using Sass.Components;
+    <EditForm Model="Item" OnValidSubmit="@HandleValidSubmit" novalidate>
+        <DataAnnotationsValidator />
+        <ProgressSummary></ProgressSummary>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.FirstName" SuccessMessage="Nice to meet you!"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.Lastname"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.Title" SuccessMessage="Wow {0} you say, sound interesting"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.Address"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.PostalCode"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.City"></AzmInputText>
+        </div>
+        <div class="form-row">
+            <AzmInputText FormClass="col-md-12" @bind-Value="@Item.Country"></AzmInputText>
+        </div>
+        <button type="submit">Submit</button>
+
+    </EditForm>
+
+
+
+@code {
+    protected Person Item = new Person();
+
+    public class Person
+    {
+        [Display(Name="First name",Description = "What is your name?")]
+        [Required(ErrorMessage="Please provide a name",AllowEmptyStrings =false)]
+        public string FirstName { get; set; }
+        [Display(Name = "Last name")]
+        [Required(ErrorMessage = "Please provide a last name", AllowEmptyStrings = false)]
+        public string Lastname { get; set; }
+        [Display(Name = "Title", Prompt ="Watermark")]
+        [Required(ErrorMessage = "Please provide your title")]
+        public string Title { get; set; }
+
+        [Display(Name = "Address")]
+        [Required(ErrorMessage = "Please provide your address")]
+        public string Address { get; set; }
+
+        [Display(Name = "Postal code")]
+        [Required(ErrorMessage = "Please provide your postal code")]
+        public string PostalCode { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "Please provide your city")]
+        public string City { get; set; }
+
+        [Display(Name = "Country")]
+        [Required(ErrorMessage = "Please provide your country")]
+        public string Country { get; set; }
+
+
+    }
+
+    protected async Task HandleValidSubmit()
+    {
+        //Do stuff here
+    }
+}
